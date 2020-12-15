@@ -45,6 +45,21 @@ Below are the detailed social media features developed in the application from s
 
 Below are more screenshots from Google Play Store,
 
-![](images/screenshot3_1.png)![](images/screenshot3_2.png)![](images/screenshot3_3.png)
-![](images/screenshot3_4.png)![](images/screenshot3_5.png)![](images/screenshot3_6.png)
+# App Screenshots
+
+<table>
+  <tr>
+    <td><img src="images/screenshot3_1.png" width=270 height=480></td>
+    <td><img src="images/screenshot3_2.png" width=270 height=480></td>
+    <td><img src="images/screenshot3_3.png" width=270 height=480></td>
+  </tr>
+ </table>
+ 
+ <table>
+  <tr>
+    <td><img src="images/screenshot3_4.png" width=270 height=480></td>
+    <td><img src="images/screenshot3_5.png" width=270 height=480></td>
+    <td><img src="images/screenshot3_6.png" width=270 height=480></td>
+  </tr>
+ </table>
 
