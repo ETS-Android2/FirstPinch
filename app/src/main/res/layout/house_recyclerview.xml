@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:gravity="center|top"
+        android:orientation="vertical"
+        android:background="#f9f9f9">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="Suggested Houses for you"
+            android:textColor="#1a0101"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:id="@+id/chooseHouseHeaderText"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:text="You can enter or exit anyhouse later."
+            android:textColor="#250202"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:id="@+id/textView" />
+
+
+
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/house_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#c7c7c7"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false">
+
+        </android.support.v7.widget.RecyclerView>
+
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center|bottom"
+        android:background="#f9f9f9">
+        <Button
+            android:id="@+id/btn_go"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/curved_button"
+            android:layout_centerInParent="true"
+            android:text="Done"
+            android:textColor="#f5f5f5"
+            android:typeface="serif"
+            android:visibility="visible"
+            android:textAllCaps="false"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+    <!--<Button
+        android:id="@+id/btn_go_bottom"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="3dp"
+        android:background="#4A0958"
+        android:layout_gravity="bottom"
+        android:text="Go"
+        android:textColor="#f5f5f5"
+        android:typeface="serif"
+        android:visibility="visible" />-->
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="www.firstpinch.com.firstpinch2">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- for GCM -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <permission
+        android:name="www.firstpinch.com.firstpinch2.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="www.firstpinch.com.firstpinch2.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:name=".CustomGallery.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:resizeableActivity="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+        <!--<provider
+            android:name=".CitySuggestionProvider"
+            android:authorities="ngvl.android.demosearch.citysuggestion"
+            android:enabled="true"
+            android:exported="true"/>-->
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+       <!-- <service android:name=".FireBase.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".FireBase.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>-->
+
+        <!--
+            GCM Receiver
+        -->
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="www.firstpinch.com.firstpinch2"/>
+            </intent-filter>
+        </receiver>
+
+        <!--
+            GCM Receiver Service
+        -->
+        <service android:name=".GCM.GCMPushReceiverService" android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </service>
+
+        <!--
+            GCM Registration Intent Service
+        -->
+        <service android:name=".GCM.GCMRegistrationIntentService" android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
+
+        <activity android:name=".MainActivity">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN_ACITIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Main"
+            android:label="@string/app_name"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ProfilePic" />
+
+        <activity
+            android:name=".IntroActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.INTROACTOVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SignUp"
+            android:label="@string/app_name"
+            android:parentActivityName=".ChooseSignUp"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.SIGNUP" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ChooseSignUp" />
+        </activity>
+        <activity
+            android:name=".SignIn"
+            android:label="@string/app_name"
+            android:parentActivityName=".IntroActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.SIGNIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".IntroActivity" />
+        </activity>
+        <activity
+            android:name=".ForgotPassword"
+            android:label="@string/app_name"
+            android:parentActivityName=".SignIn"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.FORGOTPASSWORD" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SignIn" />
+        </activity>
+
+
+        <activity
+            android:name=".WebView_Common"
+            android:label="@string/app_name"
+            android:parentActivityName=".SignUp"
+            android:theme="@style/AppTheme">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.WEBVIEW_COMMON" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SignUp" />
+        </activity>
+        <activity
+            android:name=".ChooseSignUp"
+            android:label="@string/app_name"
+            android:parentActivityName=".IntroActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.CHOOSESIGNUP" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".IntroActivity" />
+        </activity>
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".SelectInterests"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.SELECTINTERESTS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".HouseRecyclerView"
+            android:label="@string/app_name"
+            android:parentActivityName=".SelectInterests"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.SELECTINTERESTS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SelectInterests" />
+
+        </activity>
+
+        <activity
+            android:name=".YourHouses"
+            android:label="Your Houses"
+            android:parentActivityName=".Home"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.SELECTINTERESTS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+
+        </activity>
+
+        <!--<activity
+            android:name=".MainFeed.MainFeedRecyclerView"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".HouseRecyclerView">
+            <intent-filter>
+                <action android:name="android.intent.action.SELECTINTERESTS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HouseRecyclerView" />
+
+        </activity>-->
+
+        <activity
+            android:name=".ContainerLayouts"
+            android:label="@string/app_name"
+            android:parentActivityName=".HouseRecyclerView"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.SELECTINTERESTS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HouseRecyclerView" />
+
+        </activity>
+        <activity
+            android:name=".ProfilePages.ProfileActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".ContainerLayouts"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.SELECTINTERESTS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ContainerLayouts" />
+
+        </activity>
+
+        <activity
+            android:name=".HouseProfilePages.HouseProfileActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".ContainerLayouts"
+            android:theme="@style/AppTheme">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.SELECTINTERESTS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ContainerLayouts" />
+
+        </activity>
+
+        <activity
+            android:name=".PinchAQues"
+            android:label="@string/app_name"
+            android:parentActivityName=".ContainerLayouts"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.SELECTINTERESTS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <!-- Intent filter action for receiving multiple images  -->
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <!--  To receive Images set mime type to image -->
+                <data android:mimeType="image/*" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ContainerLayouts" />
+
+        </activity>
+        <activity
+            android:name=".PinchAQuesInHouse"
+            android:label="@string/app_name"
+            android:parentActivityName=".ContainerLayouts"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.SELECTINTERESTS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <!-- Intent filter action for receiving multiple images  -->
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <!--  To receive Images set mime type to image -->
+                <data android:mimeType="image/*" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ContainerLayouts" />
+
+        </activity>
+        <activity
+            android:name=".PinchAPost"
+            android:label="@string/app_name"
+            android:parentActivityName=".ContainerLayouts"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.SELECTINTERESTS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <!-- Intent filter action for receiving multiple images  -->
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <!--  To receive Images set mime type to image -->
+                <data android:mimeType="image/*" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ContainerLayouts" />
+
+        </activity>
+        <activity
+            android:name=".PinchAPostInHouse"
+            android:label="@string/app_name"
+            android:parentActivityName=".ContainerLayouts"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.SELECTINTERESTS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <!-- Intent filter action for receiving multiple images  -->
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <!--  To receive Images set mime type to image -->
+                <data android:mimeType="image/*" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ContainerLayouts" />
+
+        </activity>
+        <activity
+            android:name=".Home"
+            android:label="Home"
+            android:launchMode="singleTop"
+            android:parentActivityName=".HouseRecyclerView"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.HOME" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HouseRecyclerView" />
+
+        </activity>
+
+        <activity
+            android:name=".Search.SearchActivity"
+            android:label=""
+            android:launchMode="singleTop"
+            android:parentActivityName=".Search.SearchActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCHABLE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Search.SearchActivity" />
+
+        </activity>
+
+
+        <activity
+            android:name=".Search.SearchableActivity"
+            android:parentActivityName=".Search.SearchActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Search.SearchActivity" />
+        </activity>
+
+
+        <!--<activity
+            android:name=".NotificationPages.NotificationsActivity"
+            android:theme="@style/MyAppTheme"
+            android:label=""
+            android:parentActivityName=".Home">
+            <intent-filter>
+                <action android:name="android.intent.action.NOTIFICATIONS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+
+        </activity>-->
+        <activity
+            android:name=".MainFeed.MainFeedDetailedActivity"
+            android:label=""
+            android:parentActivityName=".Home"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.NOTIFICATIONS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+
+        </activity>
+        <activity
+            android:name=".Explore.ExploreActivity"
+            android:label=""
+            android:parentActivityName=".Home"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.EXPLORE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+
+        </activity>
+        <activity
+            android:name=".Explore.ExploreHousesRecyclerView"
+            android:label=""
+            android:parentActivityName=".Explore.ExploreActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.EXPLORE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Explore.ExploreActivity" />
+
+        </activity>
+        <activity
+            android:name=".CustomGallery.CustomGallery_Activity_Question"
+            android:grantUriPermissions="true"
+            android:label="Recent Activity"
+            android:parentActivityName=".PinchAQues"
+            android:theme="@style/MyAppTheme">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.CUSTOM" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PinchAQues" />
+        </activity>
+        <activity
+            android:name=".CustomGallery.CustomGallery_Activity_Post"
+            android:grantUriPermissions="true"
+            android:label="Recent Activity"
+            android:parentActivityName=".PinchAPost"
+            android:theme="@style/MyAppTheme">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.CUSTOM" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PinchAPost" />
+        </activity>
+
+        <activity
+            android:name=".Settings.SettingsActivity"
+            android:label="Settings"
+            android:parentActivityName=".Home"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <intent-filter>
+                <action android:name="android.intent.action.SETTING" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+        </activity>
+
+        <activity
+            android:name=".EditProfile"
+            android:label="Settings"
+            android:parentActivityName=".Home"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+        </activity>
+
+        <activity
+            android:name=".CropImageActivity"
+            android:label="Settings"
+            android:parentActivityName=".Home"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+        </activity>
+        <activity
+            android:name=".ImageViewActivity"
+            android:label=""
+            android:parentActivityName=".Home"
+            android:theme="@style/MyAppTheme2">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+        </activity>
+        <activity
+            android:name=".BookMarks.BookMarksRecyclerView"
+            android:label="Bookmarks"
+            android:parentActivityName=".Home"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Home" />
+        </activity>
+
+        <activity
+            android:name=".Settings.UpdatePassword"
+            android:label="Update Password"
+            android:parentActivityName=".Settings.SettingsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Settings.SettingsActivity" />
+        </activity>
+
+        <activity
+            android:name=".Settings.UpdateUsername"
+            android:label="Update Password"
+            android:parentActivityName=".Settings.SettingsActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <layout
+                android:defaultHeight="500dp"
+                android:defaultWidth="600dp"
+                android:gravity="top|end"
+                android:minHeight="450dp"
+                android:minWidth="300dp" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Settings.SettingsActivity" />
+        </activity>
+
+
+    </application>
+
+</manifest>

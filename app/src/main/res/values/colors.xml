@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>-->
+    <!--<color name="accent_dark">#ff2929</color>
+    <color name="accent">#ff5252</color>
+    <color name="secondary_text">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_overlay">#00F3F3F3</color>-->
+    <!--<color name="colorPrimary">#4CAF50</color>-->
+    <!--<color name="colorPrimaryDark">#388E3C</color>-->
+    <!--<color name="colorAccent">#F44336</color>-->
+    <color name="colorFAB1">#4A0958</color>
+    <color name="colorFAB2">#4A0958</color>
+    <color name="cardview_shadow_start_color">#37000000</color>
+    <color name="cardview_shadow_end_color">#03000000</color>
+    <color name="notification_tab_selected">#3F51B5</color>
+    <color name="notification_tab_unselected">#ffffff</color>
+</resources>

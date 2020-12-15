@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+
+    <!--<ImageView
+        android:id="@+id/profile_head_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/toolbar"
+        android:background="@drawable/sample_2" />
+
+    <ImageView
+        android:id="@+id/p_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@id/profile_head_image"
+
+        android:layout_marginTop="-30dp"
+        android:background="@drawable/instagramimagesize1080p" />
+
+
+    <TextView
+        android:layout_width="191dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Description About the User" />-->
+
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/main.appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:focusableInTouchMode="true"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme"
+        android:layout_marginBottom="15dp">
+
+
+        <!-- <android.support.v7.widget.Toolbar
+             android:id="@+id/toolbar"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:minHeight="?attr/actionBarSize"
+             app:layout_scrollFlags="scroll|enterAlways">
+
+         </android.support.v7.widget.Toolbar>-->
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/CollapsingToolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll">
+
+            <ImageView
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/club_pic"
+                app:layout_collapseMode="parallax" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/AppTheme" />
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        <www.firstpinch.com.firstpinch2.SquareImageView
+            android:id="@+id/circleimageview"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="-40dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="15dp"
+            app:layout_scrollFlags="scroll"
+            android:background="@drawable/thick_border"
+            app:layout_collapseMode="parallax"
+            android:elevation="4dp"
+            android:padding="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_edit"
+            android:text="Edit Profile"
+            android:visibility="invisible"
+            app:layout_scrollFlags="scroll"
+            android:background="@drawable/rect_round_shape"
+            android:textStyle="normal"
+            android:padding="8dp"
+            android:layout_marginTop="-30dp"
+            android:layout_marginRight="15dp"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="11sp"
+            android:layout_gravity="end"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_scrollFlags="scroll">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/p_profilename"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profile Name"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="#090909"/>
+
+                <TextView
+                    android:id="@+id/p_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="\@Username"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/profile_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:text="Whether it is Snapchat, Twitter, Facebook, Yelp or just a post to co-workers or business officials, the number of actual characters matters."
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginTop="25dp"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/DarkGray"
+            app:tabMode="fixed" /><!-- no flags -->
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:id="@+id/h_ll_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="160dp"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/activityTexttHousepage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/rounded_edittext_fab"
+            android:elevation="2dp"
+            android:text="Pinch a Post"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/h_fab_pinch_a_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/post_icon"
+            app:backgroundTint="#e76a0b"
+            app:elevation="6dp"
+            app:layout_behavior="www.firstpinch.com.firstpinch2.Scroll"
+            app:pressedTranslationZ="12dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/h_ll_ques"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="90dp"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/activityText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/rounded_edittext_fab"
+            android:elevation="6dp"
+            android:text="Pinch a Question"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/h_fab_pinch_a_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/question_icon"
+            app:backgroundTint="#df1893"
+            app:elevation="6dp"
+            app:layout_behavior="www.firstpinch.com.firstpinch2.Scroll"
+            app:pressedTranslationZ="12dp" />
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/h_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_add_black_48dp"
+        app:backgroundTint="#f5e904"
+        app:elevation="8dp"
+        app:pressedTranslationZ="12dp" />
+
+
+</android.support.design.widget.CoordinatorLayout>
+
+    <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        </LinearLayout>-->

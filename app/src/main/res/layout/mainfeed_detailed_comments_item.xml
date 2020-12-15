@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:layout_marginTop="1dp"
+    android:paddingBottom="10dp">
+
+    <ImageView
+        android:id="@+id/comm_profile_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/instagramimagesize1080p" />
+
+    <TextView
+        android:id="@+id/comm_profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/comm_profile_image"
+        android:text="Vishal Puri"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/comm_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="1dp"
+        android:layout_toRightOf="@id/comm_profile_name"
+        android:text="\@username"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/comm_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comm_profile_name"
+        android:layout_marginBottom="2dp"
+        android:layout_marginRight="10dp"
+        android:autoLink="all"
+        android:linksClickable="true"
+        android:textColorLink="#0000ff"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/comm_profile_image"
+        android:text="This is dijsfjbdfvjn kjdfn ksjnd nsfn ein sefjn sfvijn\ndvk,mdxv
+         dfsvklmsfv;mvdfv\noxkfmvfvomkxv oxm xfvokm xvokm x\nfovmx okmxvkom"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/comm_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:layout_marginRight="5dp"
+        android:adjustViewBounds="true"
+        android:visibility="gone"
+        android:layout_below="@id/comm_title"
+        android:layout_toRightOf="@id/comm_profile_image" />
+
+    <TextView
+        android:id="@+id/comm_appreciate"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comm_image"
+        android:layout_toRightOf="@id/comm_profile_image"
+        android:padding="5dp"
+        android:text="Appreciate"
+        android:textColor="#FBC02D"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/comm_delete2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comm_image"
+        android:layout_marginLeft="3dp"
+        android:layout_toRightOf="@id/comm_appreciate"
+        android:padding="5dp"
+        android:text="Delete"
+        android:textColor="#FBC02D"
+        android:textSize="14sp" />
+
+
+    <TextView
+        android:id="@+id/comm_appreciations_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/comm_image"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="6dp"
+        android:padding="1dp"
+        android:text="4"
+        android:textColor="#9E9E9E"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/comm_appreciations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comm_image"
+        android:layout_marginRight="2dp"
+        android:layout_toLeftOf="@id/comm_appreciations_count"
+        android:paddingBottom="2dp"
+        android:paddingTop="7dp"
+        android:text="Appreciations"
+        android:textColor="#9E9E9E"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/comm_appreciations_count"
+        android:layout_marginTop="10dp"
+        android:background="#E0E0E0" />
+</RelativeLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "551211542150",
+    "project_id": "firebase-firstpinch"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551211542150:android:89b44f71b432f501",
+        "android_client_info": {
+          "package_name": "www.firstpinch.com.firstpinch2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "551211542150-rknkpqh5cq7adtkgj9j064c04qanonsa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "www.firstpinch.com.firstpinch2",
+            "certificate_hash": "659277DA45B6CEC456676F8D46884698DB2B1B3D"
+          }
+        },
+        {
+          "client_id": "551211542150-cj9kislnlnrddj133sui7j6h6f588alp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDte6xOW93OE5MWJYwLdLsuwf82EA4dnM4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
