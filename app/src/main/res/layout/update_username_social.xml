@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/view_rl_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:background="#93278f"
+        android:focusableInTouchMode="true">
+
+        <ImageView
+            android:id="@+id/post_cross_img"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_arrow_back_white_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="13dp"
+            android:layout_toRightOf="@id/post_cross_img"
+            android:text="Change Username"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/edit_update_img"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_check_white_24dp" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/edit_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="50dp"
+        android:drawableLeft="@drawable/ic_account_box_black_24dp"
+        android:drawablePadding="5dp"
+        android:focusableInTouchMode="true"
+        android:hint="New Username"
+        android:textColorHint="#949393"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/button_update_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_radiobutton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="25dp"
+        android:background="#00ffffff"
+        android:text="Save Changes"
+        android:textAllCaps="true"
+        android:textColor="#93278f"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+</LinearLayout>

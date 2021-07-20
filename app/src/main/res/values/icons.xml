@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fa_icon_areachart">&#xf1fe;</string>
+    <string name="fa_icon_piechart">&#xf200;</string>
+    <string name="fa_icon_linechart">&#xf201;</string>
+    <string name="fa_icon_tagging">&#xf1fa;</string>
+    <string name="fa_icon_respond">&#xf0e5;</string>
+    <string name="fa_icon_answer">&#xf086;</string>
+    <string name="fa_icon_question">&#xf128;</string>
+    <string name="fa_icon_post">&#xf1ea;</string>
+    <string name="fa_icon_star">&#xf005;</string>
+</resources>

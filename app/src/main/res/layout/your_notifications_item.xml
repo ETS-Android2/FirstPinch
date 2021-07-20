@@ -25,12 +25,19 @@
             android:paddingTop="15dp"
             android:paddingBottom="15dp">
 
-            <ImageView
+            <TextView
                 android:id="@+id/notification_indicator"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/instagramimagesize1080p"
-                android:layout_marginRight="15dp" />
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="10dp"/>
+
+            <!--<ImageView
+                android:id="@+id/im_notification_indicator"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="10dp"/>-->
 
             <ImageView
                 android:id="@+id/notif_profile_image"
@@ -83,7 +90,7 @@
                     android:id="@+id/notif_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#838181"
+                    android:textColor="#a6a4a4"
                     android:text="fklsm sdkm sdkm sdfkm sdkm sdl s d"
                     android:layout_marginTop="15dp"/>
             </LinearLayout>

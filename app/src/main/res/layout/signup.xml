@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#59267c">
+    android:background="#ffffff">
 
     <!--<android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -22,20 +22,13 @@
 
     </android.support.design.widget.AppBarLayout>-->
 
-    <TextView
+    <ImageView
         android:id="@+id/text_firstpinch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="80dp"
-        android:gravity="center_horizontal"
-        android:text="Let's Evolve"
-        android:textColor="#f5f5f5"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:typeface="serif" />
+        android:layout_width="70sp"
+        android:layout_height="70sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/splash_icon" />
 
 
     <TextView
@@ -47,7 +40,8 @@
         android:layout_below="@+id/edittext_emailid"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:background="#ffffff"
+        android:background="#3b3a3a"
+
 
         />
 
@@ -61,7 +55,7 @@
         android:layout_below="@+id/edittext_password"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:background="#ffffff"
+        android:background="#3b3a3a"
 
         />
 
@@ -87,30 +81,15 @@
         android:textStyle="bold"
         android:typeface="serif" />-->
 
-    <Button
-        android:id="@+id/button_signup2"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_below="@+id/ll_radiobutton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="25dp"
-        android:background="@drawable/signupbutton_edittext"
-        android:text="Sign Me Up"
-        android:textColor="#fff"
-        android:textStyle="bold"
-        android:typeface="serif" />
 
     <LinearLayout
         android:id="@+id/text_termsandconditions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/button_signup2"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="15dp"
+        android:layout_below="@+id/ll_radiobutton"
+        android:layout_marginBottom="5dp"
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:orientation="vertical">
@@ -123,24 +102,75 @@
             android:singleLine="true"
             android:text="By Signing Up you are accepting FirstPinch's "
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#f5f5f5"
+            android:textColor="#999898"
             android:textSize="12sp"
             android:textStyle="bold"
             android:typeface="serif" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/text_termsandconditions3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:singleLine="true"
-            android:text="Terms and Conditions"
+            android:text="Terms"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#d1d1d4"
+            android:textColor="#999898"
             android:textSize="12sp"
             android:textStyle="bold"
             android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/text_termsandconditions5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text=" and"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#999898"
+            android:textSize="12sp"
+            android:typeface="serif" />
+        <TextView
+            android:id="@+id/text_termsandconditions4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text=" Privacy"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#999898"
+            android:textSize="12sp"
+            android:typeface="serif" />
+        </LinearLayout>
     </LinearLayout>
+
+
+    <Button
+        android:id="@+id/button_signup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/signupbutton_edittext"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        android:typeface="serif" />
+
+    <View
+        android:id="@+id/greyd_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/button_signup2"
+        android:background="#dcdada" />
 
     <TextView
         android:id="@+id/border_set3"
@@ -151,7 +181,7 @@
         android:layout_below="@+id/edittext_username"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:background="#ffffff"
+        android:background="#3b3a3a"
 
         />
 
@@ -164,33 +194,10 @@
         android:layout_below="@+id/edittext_fullname"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:background="#ffffff"
+        android:background="#3b3a3a"
+
 
         />
-
-    <EditText
-        android:id="@+id/edittext_password"
-        android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:layout_alignEnd="@+id/border_set4"
-
-        android:layout_alignLeft="@+id/border_set4"
-        android:layout_alignRight="@+id/border_set4"
-        android:layout_alignStart="@+id/border_set4"
-        android:layout_below="@+id/border_set3"
-        android:layout_marginTop="20dp"
-
-        android:background="#00ffffff"
-        android:backgroundTint="#00ffffff"
-        android:elevation="2dp"
-        android:ems="10"
-        android:hint="Set password( min. 6 characters)"
-        android:inputType="textPassword"
-        android:textColor="#ffffff"
-        android:textColorHint="#ffffff"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:typeface="serif" />
 
     <RadioGroup
 
@@ -207,11 +214,11 @@
             android:id="@+id/radioMale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="#f5f5f5"
+            android:buttonTint="#3b3a3a"
             android:checked="true"
             android:paddingLeft="10dp"
             android:text="Male"
-            android:textColor="#fff"
+            android:textColor="#3b3a3a"
             android:textSize="15sp"
             android:textStyle="bold"
             android:typeface="serif" />
@@ -223,45 +230,40 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_marginLeft="60dp"
-            android:buttonTint="#f5f5f5"
+            android:buttonTint="#3b3a3a"
             android:paddingLeft="10dp"
             android:text="Female"
-            android:textColor="#fff"
+            android:textColor="#3b3a3a"
             android:textSize="15sp"
             android:typeface="serif" />
 
     </RadioGroup>
 
     <EditText
-        android:id="@+id/edittext_username"
-        android:layout_width="wrap_content"
+        android:id="@+id/edittext_emailid"
+        android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:layout_alignEnd="@+id/border_set3"
-        android:layout_alignLeft="@+id/border_set3"
-        android:layout_alignRight="@+id/border_set3"
-        android:layout_alignStart="@+id/border_set3"
-        android:layout_below="@+id/border_set2"
-        android:singleLine="true"
-        android:maxLines="1"
-        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@+id/border_set1"
+        android:layout_alignStart="@+id/border_set1"
+        android:layout_below="@+id/text_firstpinch"
+        android:layout_marginTop="51dp"
         android:background="#00ffffff"
         android:backgroundTint="#00ffffff"
         android:elevation="2dp"
-        android:hint="Choose your Username"
-        android:textColor="#ffffff"
-        android:textColorHint="#ffffff"
+        android:ems="10"
+        android:hint="Your email id?"
+        android:inputType="textEmailAddress"
+        android:textColor="#3b3a3a"
+        android:textColorHint="#c9c8c8"
         android:textSize="15sp"
         android:textStyle="bold"
         android:typeface="serif" />
 
     <EditText
         android:id="@+id/edittext_fullname"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:layout_alignEnd="@+id/border_set2"
         android:layout_alignLeft="@+id/border_set2"
-
-        android:layout_alignRight="@+id/border_set2"
         android:layout_alignStart="@+id/border_set2"
         android:layout_below="@+id/border_set1"
         android:layout_marginTop="16dp"
@@ -269,33 +271,56 @@
         android:backgroundTint="#00ffffff"
         android:elevation="2dp"
         android:ems="10"
-        android:hint="Full Name"
+        android:hint="Your Fullname please?"
         android:inputType="textPersonName"
-        android:textColor="#ffffff"
-        android:textColorHint="#ffffff"
+        android:textColor="#3b3a3a"
+        android:textColorHint="#c9c8c8"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        />
+
+    <EditText
+        android:id="@+id/edittext_password"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+
+        android:layout_alignLeft="@+id/border_set4"
+
+        android:layout_alignStart="@+id/border_set4"
+        android:layout_below="@+id/border_set3"
+        android:layout_marginTop="20dp"
+        android:background="#00ffffff"
+        android:backgroundTint="#00ffffff"
+        android:elevation="2dp"
+        android:ems="10"
+        android:hint="Set a password"
+        android:inputType="textPassword"
+        android:textColor="#3b3a3a"
+        android:textColorHint="#c9c8c8"
         android:textSize="15sp"
         android:textStyle="bold"
         android:typeface="serif" />
 
     <EditText
-        android:id="@+id/edittext_emailid"
-        android:layout_width="match_parent"
+        android:id="@+id/edittext_username"
+        android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_marginTop="21dp"
+        android:layout_alignLeft="@+id/border_set3"
+        android:layout_alignStart="@+id/border_set3"
+        android:layout_below="@+id/border_set2"
+        android:layout_marginTop="18dp"
         android:background="#00ffffff"
         android:backgroundTint="#00ffffff"
         android:elevation="2dp"
-        android:ems="10"
-        android:hint="Email Id"
-        android:inputType="textEmailAddress"
-        android:textColor="#ffffff"
-        android:textColorHint="#ffffff"
+        android:hint="Choose an username for you"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="#3b3a3a"
+        android:textColorHint="#c9c8c8"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:typeface="serif"
-        android:layout_below="@+id/text_firstpinch"
-        android:layout_alignLeft="@+id/border_set1"
-        android:layout_alignStart="@+id/border_set1" />
+        android:typeface="serif" />
 
 
 </RelativeLayout>

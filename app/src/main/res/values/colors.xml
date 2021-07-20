@@ -15,6 +15,6 @@
     <color name="colorFAB2">#4A0958</color>
     <color name="cardview_shadow_start_color">#37000000</color>
     <color name="cardview_shadow_end_color">#03000000</color>
-    <color name="notification_tab_selected">#3F51B5</color>
+    <color name="notification_tab_selected">#088e9f</color>
     <color name="notification_tab_unselected">#ffffff</color>
 </resources>

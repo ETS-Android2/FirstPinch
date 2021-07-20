@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">FirstPinch</string>
+    <string name="app_name">Firstpinch</string>
     <string name="facebook_app_id">177919005929396</string>
-    <string name="server_client_id">AIzaSyDte6xOW93OE5MWJYwLdLsuwf82EA4dnM4</string>
+    <string name="server_client_id">551211542150-79vlhmo2d7li9gsoterffnlafgvenle8.apps.googleusercontent.com</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
 </resources>

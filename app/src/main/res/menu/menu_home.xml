@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/notification_home"
-        android:icon="@drawable/ic_explore_white_48dp"
+        android:icon="@drawable/ic_public_white_24dp"
         android:title="notification"
         app:showAsAction="always"
         
@@ -12,7 +12,7 @@
 
     <item
         android:id="@+id/search_home"
-        android:icon="@drawable/ic_search_white_48dp"
+        android:icon="@drawable/ic_search_white_24dp"
         android:title="search"
         app:showAsAction="always"/>
 

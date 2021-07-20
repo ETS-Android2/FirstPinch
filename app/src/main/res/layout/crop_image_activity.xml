@@ -12,8 +12,7 @@
         android:layout_marginBottom="100dp"
         android:id="@+id/crop_image"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY"
-        android:src="@drawable/instagramimagesize1080p"/>
+        android:scaleType="fitXY"/>
 
     <Button
         android:layout_width="wrap_content"

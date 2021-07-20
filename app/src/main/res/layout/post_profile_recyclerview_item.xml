@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/tools"
     android:id="@+id/main_feed"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -32,8 +31,7 @@
                     android:layout_height="35dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/instagramimagesize1080p" />
+                    android:scaleType="centerCrop" />
 
                 <TextView
                     android:id="@+id/feed_house_name"
@@ -45,18 +43,28 @@
                     android:layout_toRightOf="@id/feed_house_pic"
                     android:gravity="center_vertical"
                     android:text="House Name"
-                    android:textColor="#ffa400"
-                    android:textSize="13sp"
+                    android:textColor="#737272"
+                    android:textSize="14sp"
                     android:typeface="serif" />
 
                 <ImageView
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="17dp"
                     android:layout_toRightOf="@id/feed_house_name"
-
                     android:src="@drawable/house_arrow_icon" />
+
+                <ImageView
+                    android:id="@+id/menu_button"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="2dp"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_keyboard_arrow_down_black_24dp" />
             </RelativeLayout>
 
             <View
@@ -73,7 +81,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/grayline">
-
 
 
                 <!-- <TextView
@@ -94,13 +101,13 @@
                     android:id="@+id/feed_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
+                    android:lineSpacingExtra="3dp"
                     android:text="Title of the Post\Question"
-                    android:textColor="#e85482"
-                    android:textSize="16sp"
+                    android:textColor="#ef197d"
+                    android:textSize="17sp"
                     android:typeface="serif" />
 
                 <TextView
@@ -110,21 +117,76 @@
                     android:layout_below="@id/feed_title"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_marginTop="7dp"
+                    android:layout_marginTop="15dp"
                     android:text="Descriptioin of the Post\Question."
                     android:textColor="#545353"
+                    android:textColorLink="#64B5F6"
                     android:textSize="14sp"
                     android:typeface="serif" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/preview_cardview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/feed_desc"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/preview_image"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_vertical" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/preview_title"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_toRightOf="@id/preview_image"
+                                android:text=""
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/preview_desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:text="" />
+                        </LinearLayout>
+                        ̥
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
 
                 <LinearLayout
                     android:id="@+id/ll_containing_images"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
-                    android:visibility="gone"
-                    android:layout_below="@id/feed_desc"
+                    android:layout_below="@id/preview_cardview"
                     android:layout_marginBottom="3dp"
                     android:layout_marginTop="10dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:id="@+id/ll_for_1_img"
@@ -137,8 +199,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:adjustViewBounds="true"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/sample_4" />
+                            android:scaleType="centerCrop" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -154,8 +215,7 @@
                             android:layout_height="match_parent"
                             android:layout_marginRight="2dp"
                             android:layout_weight="1"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/instagramimagesize1080p" />
+                            android:scaleType="centerCrop" />
 
                         <ImageView
                             android:id="@+id/feed_image_for2_2"
@@ -163,8 +223,7 @@
                             android:layout_height="match_parent"
                             android:layout_marginLeft="2dp"
                             android:layout_weight="1"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/sample_4" />
+                            android:scaleType="centerCrop" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -180,8 +239,7 @@
                             android:layout_height="match_parent"
                             android:layout_marginRight="2dp"
                             android:layout_weight="1"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/instagramimagesize1080p" />
+                            android:scaleType="centerCrop" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -196,8 +254,7 @@
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginLeft="2dp"
                                 android:layout_weight="1"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/sample_4" />
+                                android:scaleType="centerCrop" />
 
                             <ImageView
                                 android:id="@+id/feed_image_for3_3"
@@ -206,8 +263,7 @@
                                 android:layout_marginLeft="2dp"
                                 android:layout_marginTop="2dp"
                                 android:layout_weight="1"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/sample_3" />
+                                android:scaleType="centerCrop" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -232,8 +288,7 @@
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginRight="2dp"
                                 android:layout_weight="1"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/instagramimagesize1080p" />
+                                android:scaleType="centerCrop" />
 
                             <ImageView
                                 android:id="@+id/feed_image_for4_2"
@@ -242,8 +297,7 @@
                                 android:layout_marginRight="2dp"
                                 android:layout_marginTop="2dp"
                                 android:layout_weight="1"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/instagramimagesize1080p" />
+                                android:scaleType="centerCrop" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -259,8 +313,7 @@
                                 android:layout_marginBottom="2dp"
                                 android:layout_marginLeft="2dp"
                                 android:layout_weight="1"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/sample_4" />
+                                android:scaleType="centerCrop" />
 
                             <ImageView
                                 android:id="@+id/feed_image_for4_4"
@@ -269,8 +322,7 @@
                                 android:layout_marginLeft="2dp"
                                 android:layout_marginTop="2dp"
                                 android:layout_weight="1"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/sample_3" />
+                                android:scaleType="centerCrop" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -292,19 +344,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/ll_containing_images"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_marginTop="30dp">
 
                     <TextView
                         android:id="@+id/tv_responses"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginLeft="0dp"
+                        android:layout_toRightOf="@id/text_responses"
+                        android:layout_marginLeft="3dp"
                         android:layout_marginRight="5dp"
                         android:layout_marginTop="0dp"
                         android:text="5"
-                        android:textColor="#7d7d7d"
+                        android:textColor="#A3A2A2"
                         android:textSize="12sp"
                         android:typeface="serif" />
 
@@ -312,25 +364,26 @@
                         android:id="@+id/text_responses"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginRight="2dp"
                         android:layout_marginTop="0dp"
-                        android:layout_toLeftOf="@id/tv_responses"
+                        android:layout_alignParentLeft="true"
                         android:text="Responses"
-                        android:textColor="#7d7d7d"
+                        android:textColor="#A3A2A2"
                         android:textSize="12sp"
-                        android:typeface="serif" />
+                        android:typeface="serif"
+                        />
 
                     <TextView
                         android:id="@+id/tv_score"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="0dp"
+                        android:layout_marginLeft="3dp"
                         android:layout_marginRight="5dp"
                         android:layout_marginTop="0dp"
-                        android:layout_toLeftOf="@id/text_responses"
+                        android:layout_toLeftOf="@id/text_appreciations"
                         android:text="5"
-                        android:textColor="#7d7d7d"
+                        android:textColor="#a3a2a2"
                         android:textSize="12sp"
                         android:typeface="serif" />
 
@@ -343,7 +396,7 @@
                         android:layout_marginTop="0dp"
                         android:layout_toLeftOf="@id/tv_score"
                         android:text="Score"
-                        android:textColor="#7d7d7d"
+                        android:textColor="#A3A2A2"
                         android:textSize="12sp"
                         android:typeface="serif" />
 
@@ -351,25 +404,24 @@
                         android:id="@+id/tv_appreciations"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="0dp"
+                        android:layout_marginLeft="3dp"
                         android:layout_marginRight="5dp"
                         android:layout_marginTop="0dp"
-                        android:layout_toLeftOf="@id/text_score"
+                        android:layout_alignParentRight="true"
                         android:text="5"
-                        android:textColor="#7d7d7d"
-                        android:textSize="12sp"
-                        />
+                        android:textColor="#A3A2A2"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/text_appreciations"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="0dp"
+                        android:layout_marginLeft="5dp"
                         android:layout_marginRight="2dp"
                         android:layout_marginTop="0dp"
                         android:layout_toLeftOf="@id/tv_appreciations"
                         android:text="Appreciations"
-                        android:textColor="#7d7d7d"
+                        android:textColor="#a3a2a2"
                         android:textSize="12sp"
                         android:typeface="serif" />
 
@@ -388,11 +440,13 @@
                 <RelativeLayout
                     android:id="@+id/rl_bookmark_share_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:gravity="center_vertical"
-                    android:layout_below="@+id/grayline3"
+                    android:layout_height="50dp"
                     android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true">
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/grayline3"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp">
 
                     <!-- <TextView
                          android:id="@+id/feed_ans_or_respond"
@@ -404,7 +458,6 @@
                          android:textColor="#FBC02D"
                          android:textSize="12sp"
                          android:typeface="serif" />-->
-
 
 
                     <!-- <TextView
@@ -427,50 +480,51 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="40dp"
-                        android:layout_marginTop="13dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginTop="11dp"
+                        android:background="@drawable/activitybuttonfeed"
                         android:gravity="center_vertical"
+                        android:padding="5dp"
                         android:text="Comment"
                         android:textColor="#2d2c2b"
-                        android:textSize="12sp"
+                        android:textSize="12sp" />
 
-                        />
                     <Button
                         android:id="@+id/rate1"
-                        android:layout_width="14dp"
-                        android:layout_height="14dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="13dp"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="12dp"
                         android:layout_toRightOf="@id/main_feed_comment_text"
                         android:background="@drawable/star_unfilled"
                         android:gravity="center_vertical" />
 
                     <Button
                         android:id="@+id/rate2"
-                        android:layout_width="14dp"
-                        android:layout_height="14dp"
-                        android:layout_marginTop="13dp"
-                        android:layout_marginLeft="5dp"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="12dp"
                         android:layout_toRightOf="@id/rate1"
                         android:background="@drawable/star_unfilled"
                         android:gravity="center_vertical" />
 
                     <Button
                         android:id="@+id/rate3"
-                        android:layout_width="14dp"
-                        android:layout_height="14dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="13dp"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="12dp"
                         android:layout_toRightOf="@id/rate2"
                         android:background="@drawable/star_unfilled"
                         android:gravity="center_vertical" />
 
-                    <Button
+                    <!--<Button
                         android:id="@+id/rate4"
                         android:layout_width="14dp"
                         android:layout_height="14dp"
-                        android:layout_marginTop="13dp"
                         android:layout_marginLeft="5dp"
+                        android:layout_marginTop="13dp"
                         android:layout_toRightOf="@id/rate3"
                         android:background="@drawable/star_unfilled"
                         android:gravity="center_vertical" />
@@ -479,50 +533,25 @@
                         android:id="@+id/rate5"
                         android:layout_width="14dp"
                         android:layout_height="14dp"
-                        android:layout_marginRight="25dp"
                         android:layout_marginLeft="5dp"
+                        android:layout_marginRight="25dp"
                         android:layout_marginTop="13dp"
                         android:layout_toRightOf="@id/rate4"
                         android:background="@drawable/star_unfilled"
                         android:gravity="center_vertical"
-                        android:typeface="serif" />
+                        android:typeface="serif" />-->
 
                     <ImageView
                         android:id="@+id/feed_share"
                         android:layout_width="35dp"
                         android:layout_height="240dp"
-
-                        android:layout_toLeftOf="@+id/feed_bookmark"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginTop="0dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="1dp"
                         android:gravity="center_vertical"
-                        android:padding="9dp"
+                        android:padding="5dp"
                         android:src="@drawable/share_icon"
                         android:typeface="serif" />
-
-                    <ImageView
-                        android:id="@+id/feed_bookmark"
-                        android:layout_width="20dp"
-                        android:layout_height="40dp"
-                        android:layout_margin="10dp"
-                        android:layout_toLeftOf="@+id/feed_delete"
-                        android:gravity="center_vertical"
-                        android:background="@drawable/ic_bookmark_border_black_48dp"
-                        android:typeface="serif" />
-
-                    <ImageView
-                        android:id="@+id/feed_delete"
-                        android:layout_alignParentRight="true"
-                        android:layout_width="35dp"
-                        android:layout_height="40dp"
-                        android:layout_marginRight="0dp"
-                        android:layout_marginTop="0dp"
-
-                        android:gravity="center_vertical"
-                        android:padding="8dp"
-                        android:src="@drawable/delete_icon"
-                        android:typeface="serif" />
-
 
 
                 </RelativeLayout>
@@ -531,61 +560,52 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/see_all_comments_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/see_all_comments_layout"
-                android:layout_below="@+id/rl_main_feed_without_house_layout"
+                android:layout_below="@id/rl_main_feed_without_house_layout"
                 android:layout_marginTop="5dp"
-                android:paddingTop="10dp"
                 android:background="#f7f7f7"
+                android:paddingTop="10dp"
 
                 >
 
                 <TextView
+                    android:id="@+id/tv_see_all_comments"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tv_see_all_comments"
+                    android:paddingLeft="10dp"
                     android:text="See all comments"
                     android:textSize="13sp"
-                    android:paddingLeft="10dp"
 
                     />
 
 
-
             </RelativeLayout>
-
-
-
-
 
 
             <RelativeLayout
                 android:id="@+id/rl_comment_hint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/rl_main_feed_without_house_layout"
+                android:layout_below="@id/see_all_comments_layout"
                 android:background="#f7f7f7"
                 android:gravity="center_vertical"
-                android:paddingBottom="20dp"
-                android:paddingTop="20dp"
-                android:layout_marginTop="30dp">
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp">
 
                 <ImageView
                     android:id="@+id/feed_hint_comm_profile_image"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
                     android:gravity="center_vertical"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/instagramimagesize1080p" />
+                    android:scaleType="centerCrop" />
 
                 <TextView
                     android:id="@+id/feed_hint_comm_profile_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@id/feed_hint_comm_profile_image"
                     android:text="Profile Name"
@@ -604,7 +624,8 @@
                     android:layout_marginTop="1dp"
                     android:layout_toRightOf="@id/feed_hint_comm_profile_image"
                     android:maxLines="4"
-                    android:text="Saguaro cacti backlit by eastern sunrise - Tucson Mountain District. Monsoon rains make for a lush desert!  Monsoon rains make for a lush desert Monsoon rains make for a lush desert Monsoon rains make for a lush desert"
+                    android:text="Saguaake for a lusains msh desert"
+                    android:textColorLink="#42A5F5"
                     android:textSize="12sp"
                     android:typeface="serif" />
 
@@ -618,6 +639,62 @@
                     />
             </RelativeLayout>
 
+            <RelativeLayout
+                android:id="@+id/rl_comment_hint2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_comment_hint"
+                android:background="#f7f7f7"
+                android:gravity="center_vertical"
+                android:paddingBottom="10dp"
+                android:paddingTop="6dp">
+
+                <ImageView
+                    android:id="@+id/feed_hint_comm_profile_image2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/feed_hint_comm_profile_name2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_toRightOf="@id/feed_hint_comm_profile_image2"
+                    android:text="Profile Name"
+                    android:textColor="#424242"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:typeface="serif" />
+
+                <TextView
+                    android:id="@+id/feed_hint_comm_title2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/feed_hint_comm_profile_name2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_toRightOf="@id/feed_hint_comm_profile_image2"
+                    android:maxLines="4"
+                    android:text="Saguaake for a lusains msh desert"
+                    android:textColorLink="#42A5F5"
+                    android:textSize="12sp"
+                    android:typeface="serif" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:layout_below="@+id/feed_hint_comm_title2"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/feed_hint_comm_profile_image2"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
 
 
         </RelativeLayout>

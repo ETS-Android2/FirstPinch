@@ -9,8 +9,8 @@
         android:id="@+id/cardview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="4dp"
         app:cardBackgroundColor="#ffffff"
+        app:cardCornerRadius="3dp"
         app:cardElevation="4dp"
         app:cardUseCompatPadding="true">
 
@@ -18,7 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#fff"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
 
             <www.firstpinch.com.firstpinch2.SquareImageView
                 android:id="@+id/house_card_image"
@@ -39,7 +40,9 @@
                     android:paddingTop="2dp"
                     android:text="House Name"
                     android:textColor="#000"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:id="@+id/house_card_housedesc"
@@ -50,18 +53,32 @@
                     android:paddingTop="2dp"
                     android:text="Interest Name"
                     android:textColor="#505050"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:layout_marginLeft="5dp"/>
 
                 <Button
                     android:id="@+id/house_card_enter_exit"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="30dp"
                     android:background="#00ffffff"
                     android:gravity="left"
                     android:paddingLeft="5dp"
                     android:text="ENTER"
-                    android:textColor="@color/LightGreen" />
+                    android:textColor="#148305"
+                    android:layout_marginLeft="5dp"/>
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:layout_marginTop="20dp"
+                    android:indeterminate="true" />
+
 
             </LinearLayout>
 

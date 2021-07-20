@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="always" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_text4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="50dp"
+                android:gravity="center_horizontal"
+                android:textColor="#0eafb7"
+                android:textSize="19sp"
+                android:text="FAQs" />
+            <TextView
+                android:id="@+id/tv_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="30dp"
+                android:gravity="left"
+                android:textColor="#93278f"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:text="What is 'pinch a post'or 'pinch a question'?" />
+
+
+            <TextView
+                android:id="@+id/tv_text_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:textColor="#232323"
+                android:text="Simply put,it means to publish your story /query.Since we are a special community of 'pinchers', whatever activity we undertake is referred to as' pinching." />
+
+
+            <TextView
+                android:id="@+id/tv_text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="30dp"
+                android:gravity="left"
+                android:textColor="#93278f"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:text="What are 'reactions' ?" />
+
+
+            <TextView
+                android:id="@+id/tv_text_content1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:textColor="#232323"
+                android:text=" Every time you postsomething, the fellow Pinchers will read and react to it by clicking on one of the smileys . The choice of Smiley depends upon how they felt about it.The first smiley shows that the post wasn't liked or they found it irrelevant and not useful.The second smiley shows that the post was good and it was useful. The third smiley showsthat the post was absolutely marvellous , informative and enjoyable. " />
+
+
+            <TextView
+                android:id="@+id/tv_text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="30dp"
+                android:gravity="left"
+                android:textColor="#93278f"
+                android:textSize="17sp"
+                android:text="What's a 'score'?" />
+
+
+            <TextView
+                android:id="@+id/tv_text_content2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:textColor="#232323"
+                android:text="A' score' is calculated based on the average rating of a post. The first smiley carries negative points (-1),the second smiley carries (2) points and the third smiley carries (3) points." />
+
+
+            <TextView
+                android:id="@+id/tv_text3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="30dp"
+                android:gravity="left"
+                android:textColor="#93278f"
+                android:textSize="17sp"
+                android:text="Your own Club" />
+
+
+            <TextView
+                android:id="@+id/tv_text_content3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:textColor="#232323"
+                android:text="You will soon be able to create your own club in any interest. Yo!" />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

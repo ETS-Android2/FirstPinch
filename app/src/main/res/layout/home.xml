@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:background="#ffffff"
                 app:tabGravity="fill"
-                app:tabIndicatorColor="@color/DarkGray"
+                app:tabIndicatorColor="#93278F"
                 app:tabMode="fixed" />
         </android.support.design.widget.AppBarLayout>
 
@@ -55,10 +55,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_marginBottom="140dp"
-            android:layout_marginRight="@dimen/fab_margin"
             android:elevation="20dp"
             android:orientation="horizontal"
-            android:visibility="gone">
+            android:visibility="gone"
+            android:layout_marginLeft="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -78,6 +78,7 @@
                 app:elevation="6dp"
                 app:layout_behavior="www.firstpinch.com.firstpinch2.Scroll"
                 app:pressedTranslationZ="12dp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -86,9 +87,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_marginBottom="80dp"
-            android:layout_marginRight="@dimen/fab_margin"
             android:orientation="horizontal"
-            android:visibility="gone">
+            android:visibility="gone"
+            android:layout_marginLeft="10dp">
 
             <TextView
                 android:layout_width="wrap_content"

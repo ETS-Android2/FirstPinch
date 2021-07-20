@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:background="#f5f5f5"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
     android:gravity="center|top"
-    android:orientation="vertical">
+    android:orientation="vertical"
+        android:paddingBottom="40dp">
 
     <TextView
         android:layout_width="wrap_content"
@@ -13,7 +19,7 @@
         android:layout_marginTop="40dp"
         android:focusableInTouchMode="true"
         android:gravity="center"
-        android:text="Choose atleast 3 interests to continue"
+        android:text="Choose at least 3 interests to continue"
         android:textColor="@color/DarkSlateGray"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -24,35 +30,59 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
         android:gravity="center"
-        android:text="We will suggest houses for you accordingly"
+        android:text="We will suggest clubs for you accordingly"
         android:textColor="@color/DarkSlateGray"
         android:textSize="13sp"
 
         android:typeface="serif"
         android:id="@+id/bodyTextFont" />
 
-    <Button
-        android:id="@+id/btn_continue"
-        android:layout_width="100dp"
-        android:layout_height="25dp"
-        android:gravity="center"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="15dp"
-        android:background="#fac810"
-        android:text="Continue"
-        android:textColor="#f5f5f5"
-        android:typeface="serif"
-        android:visibility="visible"
-        android:textAllCaps="false"
-        />
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clipToPadding="false"
+        android:background="#dad9d9"
         android:nestedScrollingEnabled="false">
 
     </android.support.v7.widget.RecyclerView>
+
 </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center|bottom"
+        android:background="#ffffff">
+
+
+        <View
+            android:id="@+id/greyt_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#c6c4c4"
+            />
+        <Button
+            android:id="@+id/btn_continue"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@id/greyt_line"
+            android:background="@drawable/signupbutton_edittext"
+            android:layout_alignParentRight="true"
+            android:text="Next"
+            android:textColor="#ffffff"
+            android:typeface="serif"
+            android:visibility="visible"
+            android:textAllCaps="false"
+            android:textSize="15sp"
+            style="@style/MyButtonStyle"/>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

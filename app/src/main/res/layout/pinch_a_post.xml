@@ -9,7 +9,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="45dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,19 +30,49 @@
                     android:layout_height="40dp"
                     android:layout_marginLeft="5dp"
                     android:padding="8dp"
-                    android:src="@drawable/ic_close_black_48dp" />
+                    android:src="@drawable/ic_highlight_off_black_24dp" />
 
                 <ImageView
                     android:id="@+id/post_acc_img"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="3dp"
-                    android:background="@drawable/profileimagebgradius"
-                     />
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/profileimagebgradius" />
 
             </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_house_name_inhouse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Club : "
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tv_house_name_inhouse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/notification_textview_widget"
+                    android:padding="10dp"
+                    android:text="house name"
+                    android:textColor="#ffffff"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/ll_select_house"
@@ -56,21 +87,53 @@
                     android:id="@+id/pinchInText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:text="Pinch post in :"
                     android:textColor="#979797"
                     android:textStyle="normal"
-                    android:typeface="serif" />
+                    android:typeface="serif"
+                    android:textSize="13sp"/>
 
                 <AutoCompleteTextView
                     android:id="@+id/et_choose_house"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
+                    android:dropDownHeight="180dp"
                     android:background="@drawable/rounded_edittext"
                     android:completionThreshold="1"
-                    android:hint="Choose a House here"
-                    android:textSize="12sp"
+                    android:hint="Start typing here to choose a Club"
+                    android:textSize="13sp"
                     android:typeface="serif" />
+
+                <LinearLayout
+                    android:id="@+id/ll_house_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/notification_textview_widget"
+                    android:padding="5dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tv_house_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="house name"
+                        android:textSize="13sp"
+                        android:textColor="#232323"/>
+
+                    <ImageView
+                        android:id="@+id/im_house_name_close"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/ic_close_black_48dp" />
+
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -97,7 +160,8 @@
                     android:textColorHint="#a4a2a2"
                     android:textSize="19sp"
                     android:textStyle="bold"
-                    android:typeface="serif" />
+                    android:typeface="serif"
+                   />
 
                 <TextView
                     android:id="@+id/tv_char_left"
@@ -105,7 +169,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:layout_marginRight="10dp"
-                    android:layout_marginTop="-10dp"
+                    android:layout_marginTop="-2dp"
                     android:text="100"
                     android:textSize="10sp"
                     android:typeface="serif" />
@@ -129,7 +193,7 @@
             </LinearLayout>
 
 
-            <EditText
+            <www.firstpinch.com.firstpinch2.MonitoringEditText
                 android:id="@+id/et_ques_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -148,7 +212,67 @@
                 android:textColorHint="#c1c0c0"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:typeface="serif" />
+                android:typeface="serif"
+               />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/preview_cardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/preview_close"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/ic_close_black_48dp"
+                    android:layout_gravity="end"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/preview_image"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/preview_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_toRightOf="@id/preview_image"
+                            android:text=""
+                            android:textStyle="bold"
+                            android:textSize="15sp"/>
+
+                        <TextView
+                            android:id="@+id/preview_desc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:text="" />
+                    </LinearLayout>
+                    ̥
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
 
             <GridView
                 android:id="@+id/selectedImagesGridView"
@@ -162,22 +286,20 @@
                 android:nestedScrollingEnabled="true"
                 android:verticalSpacing="4dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="bottom|end"
-                android:orientation="horizontal">
 
-
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
         android:layout_gravity="bottom"
-        android:background="#fafafa">
+        android:background="#ffffff">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#dedcdc"/>
 
 
         <!--<ImageView
@@ -188,33 +310,39 @@
             android:layout_marginTop="2dp"
             android:src="@android:drawable/ic_menu_send" />-->
 
+
+        <Button
+            android:id="@+id/button_ask_now"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/pinchbuttonpost"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp"
+            android:text="Pinch"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            style="@style/MyButtonStyle"
+
+            />
+
         <Button
             android:id="@+id/btnAddPhots"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="8dp"
-            android:layout_toLeftOf="@+id/button_ask_now"
-            android:background="@drawable/camera_icon"
-            android:textSize="12sp"
-            android:visibility="visible" />
-
-        <Button
-            android:id="@+id/button_ask_now"
-            android:layout_width="wrap_content"
-            android:layout_height="28dp"
-            android:layout_alignBottom="@+id/btnAddPhots"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="3dp"
-            android:layout_marginRight="5dp"
-            android:background="@drawable/pinchbutton"
-            android:padding="0dp"
-            android:text="Post Now"
-            android:textColor="#f5f5f5"
-            android:textSize="12sp"
-            android:visibility="visible" />
-
+            android:layout_marginTop="11dp"
+            android:layout_toLeftOf="@id/button_ask_now"
+            android:background="@drawable/gallery_icon"
+            android:textSize="12sp" />
 
     </RelativeLayout>
 </FrameLayout>

@@ -3,15 +3,15 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#7d27b7</item>
-        <item name="colorPrimaryDark">#616161</item>
+        <item name="colorPrimary">#93278f</item>
+        <item name="colorPrimaryDark">#6b1c68</item>
         <item name="colorAccent">#9E9E9E</item>
 
     </style>
 
 
 
-    <style name="AppTheme.NoActionBar">
+    <style name="AppTheme.NoActionBar" >
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
@@ -30,6 +30,13 @@
     </style>
 
     <style name="MyAppTheme2" parent="Theme.AppCompat.DayNight.NoActionBar" />
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_bg</item>
+    </style>
+
+    <style name="MyButtonStyle" parent="@style/Widget.AppCompat.Button.Borderless"></style>
+
 
 
 </resources>
